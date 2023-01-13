@@ -22,7 +22,7 @@ export default function handler(
           description: 'Include Installation', 
           service_code: 'delivery_include_installation', 
           currency: 'GBP', 
-          'total_price': 300
+          'total_price': 30000
         }
       }
     );
