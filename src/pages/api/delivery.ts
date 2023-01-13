@@ -13,6 +13,12 @@ export default function handler(
   console.log('start deliverying logic');
   console.log('body', req.body);
   const {items, locale} = req.body.rate;
+  let deliveryCost = 0;
+  for(const item of items) {
+    if (item.sku == 'SF-1105') {
+      deliveryCost += 30000 * item.quantity;
+    }
+  }
   console.log('items', items);
   if (locale == 'en-GB') {
     res.status(200).json(
@@ -22,7 +28,7 @@ export default function handler(
           description: 'Include Installation', 
           service_code: 'delivery_include_installation', 
           currency: 'GBP', 
-          'total_price': 30000
+          'total_price': deliveryCost
         }
       }
     );
