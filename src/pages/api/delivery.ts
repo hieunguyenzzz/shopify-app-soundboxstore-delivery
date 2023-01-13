@@ -24,8 +24,8 @@ export default function handler(
     res.status(200).json(
       {
         rates: {
-          service_name: 'Delivery', 
-          description: 'Include Installation', 
+          service_name: 'Delivery (Include Installation)', 
+          description: '', 
           service_code: 'delivery_include_installation', 
           currency: 'GBP', 
           'total_price': deliveryCost
