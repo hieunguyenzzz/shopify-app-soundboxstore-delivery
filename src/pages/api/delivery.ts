@@ -10,9 +10,10 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  console.log(req.body);
+  console.log('start deliverying logic');
+  console.log('body', req.body);
   const {items, locale} = req.body.rate;
-  console.log(locale);
+  console.log('locale', locale);
   res.status(200).json(
     {
       rates: {
