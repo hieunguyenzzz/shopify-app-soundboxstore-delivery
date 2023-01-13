@@ -13,16 +13,19 @@ export default function handler(
   console.log('start deliverying logic');
   console.log('body', req.body);
   const {items, locale} = req.body.rate;
-  console.log('locale', locale);
-  res.status(200).json(
-    {
-      rates: {
-        service_name: 'Free Shipping', 
-        description: 'Not Include Installation', 
-        service_code: 'free_delivery', 
-        currency: 'GBP', 
-        'total_price': 0 
+  console.log('items', items);
+  if (locale == 'en-GB') {
+    res.status(200).json(
+      {
+        rates: {
+          service_name: 'Delivery', 
+          description: 'Include Installation', 
+          service_code: 'delivery_include_installation', 
+          currency: 'GBP', 
+          'total_price': 300
+        }
       }
-    }
-  );
+    );
+  }
+  
 }
