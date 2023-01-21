@@ -11,18 +11,19 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   console.log('start deliverying logic');
-  console.log('body', req.body);
+  console.log('body.rate', req.body.rate);
   const {items, locale} = req.body.rate;
-  let deliveryCostIncludeInstallation = 0;
-  let deliveryCostWithoutInstallation = 0;
-  for(const item of items) {
-    if (item.sku == 'SF-1105') {
-      deliveryCostIncludeInstallation += 30000 * item.quantity;
-      deliveryCostWithoutInstallation += 6000 * item.quantity;
-    }
-  }
+  let folioDeliveryCostIncludeInstallation = 0;
+  let folioDeliveryCostWithoutInstallation = 0;
+  
   console.log('items', items);
   if (locale == 'en-GB') {
+    for(const item of items) {
+      if (item.sku == 'SF-1105') {
+        folioDeliveryCostIncludeInstallation += 30000 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 6000 * item.quantity;
+      }
+    }
     res.status(200).json(
       {
         rates: [
@@ -31,14 +32,14 @@ export default function handler(
             description: '', 
             service_code: 'delivery_include_installation', 
             currency: 'GBP', 
-            'total_price': deliveryCostIncludeInstallation
+            'total_price': folioDeliveryCostIncludeInstallation
           },
           {
             service_name: 'Delivery (Not Include Installation)', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'GBP', 
-            'total_price': deliveryCostWithoutInstallation
+            'total_price': folioDeliveryCostWithoutInstallation
           },
         ]
       }
