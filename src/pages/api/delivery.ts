@@ -47,7 +47,7 @@ export default function handler(
     );
   }
 
-  if (destination.country == 'IT' || destination.country == 'FR' || destination.country == 'NL' || destination.country == 'DE' || destination.country == 'ES') {
+  if (['AT', 'FR', 'ES', 'NL', 'IE', 'BE', 'PT', 'FI', 'DE', 'GR', 'LU'].includes(destination.country)) {
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
@@ -58,7 +58,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Include Installation)', 
+            service_name: 'Delivery (Not Including Installation)', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'EUR', 
