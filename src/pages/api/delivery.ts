@@ -17,7 +17,7 @@ export default function handler(
   let folioDeliveryCostWithoutInstallation = 0;
   
   console.log('items', items);
-  if (locale == 'en-GB' || currency == 'GBP') {
+  if (locale == 'en-GB') {
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         folioDeliveryCostIncludeInstallation += 30000 * item.quantity;
