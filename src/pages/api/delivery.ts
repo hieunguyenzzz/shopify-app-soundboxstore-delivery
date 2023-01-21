@@ -12,12 +12,13 @@ export default function handler(
 ) {
   console.log('start deliverying logic');
   console.log('body.rate', req.body.rate);
-  const {items, locale, currency} = req.body.rate;
+  const {items, locale, currency, destination} = req.body.rate;
+
   let folioDeliveryCostIncludeInstallation = 0;
   let folioDeliveryCostWithoutInstallation = 0;
   
   console.log('items', items);
-  if (locale == 'en-GB') {
+  if (destination.country == 'GB') {
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         folioDeliveryCostIncludeInstallation += 30000 * item.quantity;
@@ -34,6 +35,27 @@ export default function handler(
             currency: 'GBP', 
             'total_price': folioDeliveryCostIncludeInstallation
           },
+          {
+            service_name: 'Delivery (Not Include Installation)', 
+            description: '', 
+            service_code: 'delivery_not_include_installation', 
+            currency: 'GBP', 
+            'total_price': folioDeliveryCostWithoutInstallation
+          },
+        ]
+      }
+    );
+  }
+
+  if (destination.country == 'IT') {
+    for(const item of items) {
+      if (item.sku == 'SF-1105') {
+        folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
+      }
+    }
+    res.status(200).json(
+      {
+        rates: [          
           {
             service_name: 'Delivery (Not Include Installation)', 
             description: '', 
