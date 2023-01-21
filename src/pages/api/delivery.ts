@@ -12,12 +12,12 @@ export default function handler(
 ) {
   console.log('start deliverying logic');
   console.log('body.rate', req.body.rate);
-  const {items, locale} = req.body.rate;
+  const {items, locale, currency} = req.body.rate;
   let folioDeliveryCostIncludeInstallation = 0;
   let folioDeliveryCostWithoutInstallation = 0;
   
   console.log('items', items);
-  if (locale == 'en-GB') {
+  if (locale == 'en-GB' || currency == 'GBP') {
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         folioDeliveryCostIncludeInstallation += 30000 * item.quantity;
