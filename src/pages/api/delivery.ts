@@ -47,10 +47,11 @@ export default function handler(
     );
   }
 
-  if (destination.country == 'IT') {
+  if (destination.country == 'IT' || destination.country == 'FR' || destination.country == 'NL' || destination.country == 'DE' || destination.country == 'ES') {
     for(const item of items) {
       if (item.sku == 'SF-1105') {
-        folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
+        // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 14100 * item.quantity;
       }
     }
     res.status(200).json(
@@ -60,7 +61,7 @@ export default function handler(
             service_name: 'Delivery (Not Include Installation)', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
-            currency: 'GBP', 
+            currency: 'EUR', 
             'total_price': folioDeliveryCostWithoutInstallation
           },
         ]
