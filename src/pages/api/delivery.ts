@@ -29,18 +29,11 @@ export default function handler(
       {
         rates: [
           {
-            service_name: 'Delivery (Include Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_include_installation', 
             currency: 'GBP', 
             'total_price': folioDeliveryCostIncludeInstallation
-          },
-          {
-            service_name: 'Delivery (Not Include Installation)', 
-            description: '', 
-            service_code: 'delivery_not_include_installation', 
-            currency: 'GBP', 
-            'total_price': folioDeliveryCostWithoutInstallation
           },
         ]
       }
@@ -51,14 +44,14 @@ export default function handler(
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 14100 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 34200 * item.quantity;
       }
     }
     res.status(200).json(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Including Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'EUR', 
@@ -73,14 +66,14 @@ export default function handler(
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 154600 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 386152 * item.quantity;
       }
     }
     res.status(200).json(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Including Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'SEK', 
@@ -95,14 +88,14 @@ export default function handler(
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 147400 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 402786 * item.quantity;
       }
     }
     res.status(200).json(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Including Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'NOK', 
@@ -116,14 +109,14 @@ export default function handler(
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 13900 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 33422 * item.quantity;
       }
     }
     res.status(200).json(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Including Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'CHF', 
@@ -138,14 +131,14 @@ export default function handler(
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 64800 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 157128 * item.quantity;
       }
     }
     res.status(200).json(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Including Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'ZL', 
@@ -160,14 +153,14 @@ export default function handler(
     for(const item of items) {
       if (item.sku == 'SF-1105') {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 104600 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 255101 * item.quantity;
       }
     }
     res.status(200).json(
       {
         rates: [          
           {
-            service_name: 'Delivery (Not Including Installation)', 
+            service_name: 'Delivery', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'DKK', 
