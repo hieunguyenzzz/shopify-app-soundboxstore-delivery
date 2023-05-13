@@ -6,6 +6,18 @@ type Data = {
 }
 
 
+let skus= [
+  'SF-1105',
+  'SUNDAY-045',
+  'SF-1101',
+  'SF-1103',
+  'SF-1108',
+  'SF-1105-1+XS-W03H-Black',
+  'SUNDAY-045-1+XS-W03H-Black',
+  'SF-1101-1+XS-W03H-Black',
+  'SF-1103-1+XS-W03H-Black',
+  'SF-1108-1+XS-W03H-Black'
+];
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -20,7 +32,8 @@ export default function handler(
   console.log('items', items);
   if (destination.country == 'GB') {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
+        
         folioDeliveryCostIncludeInstallation += 30000 * item.quantity;
         folioDeliveryCostWithoutInstallation += 6000 * item.quantity;
       }
@@ -42,7 +55,7 @@ export default function handler(
 
   if (['AT', 'FR', 'ES', 'NL', 'IE', 'BE', 'PT', 'FI', 'DE', 'GR', 'LU'].includes(destination.country)) {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
         folioDeliveryCostWithoutInstallation += 34200 * item.quantity;
       }
@@ -64,7 +77,7 @@ export default function handler(
 
   if (destination.country == 'SE') {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
         folioDeliveryCostWithoutInstallation += 386152 * item.quantity;
       }
@@ -86,7 +99,7 @@ export default function handler(
 
   if (destination.country == 'NO') {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
         folioDeliveryCostWithoutInstallation += 402786 * item.quantity;
       }
@@ -107,7 +120,7 @@ export default function handler(
   }
   if (destination.country == 'CH') {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
         folioDeliveryCostWithoutInstallation += 33422 * item.quantity;
       }
@@ -129,7 +142,7 @@ export default function handler(
 
   if (destination.country == 'PL') {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
         folioDeliveryCostWithoutInstallation += 157128 * item.quantity;
       }
@@ -151,7 +164,7 @@ export default function handler(
 
   if (destination.country == 'DK') {
     for(const item of items) {
-      if (item.sku == 'SF-1105') {
+      if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
         folioDeliveryCostWithoutInstallation += 255101 * item.quantity;
       }
