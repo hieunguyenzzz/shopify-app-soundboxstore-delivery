@@ -42,7 +42,7 @@ export default function handler(
       {
         rates: [
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_include_installation', 
             currency: 'GBP', 
@@ -64,7 +64,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'EUR', 
@@ -86,7 +86,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'SEK', 
@@ -108,7 +108,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'NOK', 
@@ -129,7 +129,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'CHF', 
@@ -151,7 +151,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'ZL', 
@@ -173,7 +173,7 @@ export default function handler(
       {
         rates: [          
           {
-            service_name: 'Delivery', 
+            service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
             currency: 'DKK', 
