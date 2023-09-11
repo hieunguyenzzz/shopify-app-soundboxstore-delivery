@@ -53,7 +53,7 @@ export default function handler(
     );
   }
 
-  if (['AT', 'FR', 'ES', 'NL', 'IE', 'BE', 'PT', 'FI', 'DE', 'GR', 'LU'].includes(destination.country)) {
+  if (['AT', 'FR', 'ES', 'NL', 'IE', 'BE', 'PT', 'FI', 'DE', 'GR', 'LU', 'IT'].includes(destination.country)) {
     for(const item of items) {
       if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
