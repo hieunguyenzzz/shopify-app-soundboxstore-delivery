@@ -34,8 +34,8 @@ export default function handler(
     for(const item of items) {
       if (skus.includes(item.sku)) {
         
-        folioDeliveryCostIncludeInstallation += 30000 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 6000 * item.quantity;
+        folioDeliveryCostIncludeInstallation += 36000 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 7200 * item.quantity;
       }
     }
     res.status(200).json(
@@ -57,7 +57,7 @@ export default function handler(
     for(const item of items) {
       if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 34200 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 35000 * item.quantity;
       }
     }
     res.status(200).json(
@@ -101,7 +101,7 @@ export default function handler(
     for(const item of items) {
       if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 402786 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 480943 * item.quantity;
       }
     }
     res.status(200).json(
