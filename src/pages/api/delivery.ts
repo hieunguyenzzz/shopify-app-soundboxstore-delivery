@@ -29,7 +29,7 @@ export default function handler(
   let folioDeliveryCostIncludeInstallation = 0;
   let folioDeliveryCostWithoutInstallation = 0;
   
-  console.log('items', items);
+  console.log('destination', destination);
   if (destination.country == 'GB') {
     for(const item of items) {
       if (skus.includes(item.sku)) {
