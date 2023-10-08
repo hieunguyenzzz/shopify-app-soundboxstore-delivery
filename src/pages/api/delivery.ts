@@ -7,11 +7,11 @@ type Data = {
 
 
 let skus= [
-  'SF-1105',
-  'SUNDAY-045',
-  'SF-1101',
-  'SF-1103',
-  'SF-1108',
+  'SF-1105', //
+  'SUNDAY-045', //
+  'SF-1101', //
+  'SF-1103', //
+  'SF-1108', //
   'SF-1105-1+XS-W03H-Black',
   'SUNDAY-045-1+XS-W03H-Black',
   'SF-1101-1+XS-W03H-Black',
@@ -28,7 +28,26 @@ export default function handler(
 
   let folioDeliveryCostIncludeInstallation = 0;
   let folioDeliveryCostWithoutInstallation = 0;
-  
+
+  /**
+   * destionation = destination {
+   *   country: 'GB',
+   *   postal_code: 'B1 2HZ',
+   *   province: 'ENG',
+   *   city: 'Birmingham',
+   *   name: 'hieu nguyen',
+   *   address1: '4 Brindley Place',
+   *   address2: null,
+   *   address3: null,
+   *   latitude: 52.4783778,
+   *   longitude: -1.9140778,
+   *   phone: null,
+   *   fax: null,
+   *   email: null,
+   *   address_type: null,
+   *   company_name: null
+   * }
+   */
   console.log('destination', destination);
   if (destination.country == 'GB') {
     for(const item of items) {
@@ -57,7 +76,7 @@ export default function handler(
     for(const item of items) {
       if (skus.includes(item.sku)) {
         // folioDeliveryCostWithoutInstallation += 11923 * item.quantity;
-        folioDeliveryCostWithoutInstallation += 35000 * item.quantity;
+        folioDeliveryCostWithoutInstallation += 30000 * item.quantity;
       }
     }
     res.status(200).json(
@@ -67,7 +86,7 @@ export default function handler(
             service_name: 'Delivery *Kerbside Only', 
             description: '', 
             service_code: 'delivery_not_include_installation', 
-            currency: 'EUR', 
+            currency: 'GBP',
             'total_price': folioDeliveryCostWithoutInstallation
           },
         ]
